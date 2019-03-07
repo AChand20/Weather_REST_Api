@@ -15,9 +15,9 @@ class WeatherView(ListAPIView):
         ls =[]
         for w in qset:
             if int(w[1])<=9:
-                ls.append({str(w[0])+"-0"+str(w[1]):int(w[2])})
+                ls.append({str(w[0])+"-0"+str(w[1]):float(w[2])})
             else:
-                ls.append({str(w[0])+"-"+str(w[1]):int(w[2])})
+                ls.append({str(w[0])+"-"+str(w[1]):float(w[2])})
 
         return Response(ls)
 
